@@ -82,7 +82,7 @@ export default forwardRef(function Box(
           paddingBottom: multiplier(paddingBottom),
           paddingTop: multiplier(paddingTop),
           paddingInline: multiplier(paddingInline),
-          marginBlock: multiplier(marginBlock),
+          paddingBlock: multiplier(paddingBlock),
           margin: multiplier(margin),
           marginLeft: multiplier(marginLeft),
           marginRight: multiplier(marginRight),

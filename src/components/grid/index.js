@@ -4,7 +4,7 @@ import applyMultiplier from '../../utils/applyMultiplier'
 import getInstance from '../../utils/getInstance'
 
 export default forwardRef(function Grid(
-  { gap, columns, rows, areas, style, as, children, ...props },
+  { gap, columns, rows, areas, style, children, ...props },
   ref
 ) {
   const { El, baselineGrid } = getInstance()
@@ -13,7 +13,6 @@ export default forwardRef(function Grid(
   return (
     <El
       ref={ref}
-      as={as}
       {...props}
       style={[
         {

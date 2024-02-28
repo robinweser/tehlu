@@ -56,8 +56,6 @@ declare module '@tehlu/system' {
     typography?: Object
   }
 
-  type Style = Object
-
   export function createSystem(options: Options): System
   export function StyleSheet(): JSX.Element
 
@@ -67,10 +65,12 @@ declare module '@tehlu/system' {
   }
   export function Provider(props: ProviderProps): JSX.Element
 
-  type ElProps = React.HTMLAttributes<HTMLDivElement> & {
+  type Style = Object
+
+  type ElProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> & {
     children?: React.ReactNode
     as?: React.ReactNode | string | React.Component
-    style?: Style
+    style?: Style | Array<Style>
   }
 
   export function El(props: ElProps): JSX.Element
@@ -129,12 +129,13 @@ declare module '@tehlu/system' {
   export function Spacer(props: SpacerProps): JSX.Element
 
   type TextProps = {
-    variant: string
-    color: string
-    weight: Responsive<Size>
-    decoration: 'underline' | 'strike-through' | 'none'
-    size: Responsive<Size>
-    height: Responsive<Size>
+    variant?: string
+    color?: Responsive<string>
+    weight?: Responsive<Size>
+    align?: Responsive<'left' | 'center' | 'right'>
+    decoration?: Responsive<'underline' | 'strike-through' | 'none'>
+    size?: Responsive<Size>
+    height?: Responsive<Size>
   } & ElProps
   export function Text(props: TextProps): JSX.Element
 }

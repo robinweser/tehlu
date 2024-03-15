@@ -39,6 +39,7 @@ type Size = number | string
 type Responsive<T> = T | (T | undefined)[]
 
 declare module '@tehlu/system' {
+  // TODO: add proper types
   type System = any
   type Plugin = (style: Style) => Style
 
@@ -138,4 +139,24 @@ declare module '@tehlu/system' {
     height?: Responsive<Size>
   } & ElProps
   export function Text(props: TextProps): JSX.Element
+
+  type ClickButtonProps = {
+    action: (e: React.MouseEvent<HTMLButtonElement>) => void
+    disabled?: boolean
+    type?: 'button' | 'submit' | 'reset'
+  }
+  type ClickLinkProps = { action: string | Object; target?: string }
+  type ClickProps = (ClickButtonProps | ClickLinkProps) & ElProps
+  export function Click(props: ClickProps): JSX.Element
+
+  type OverlayProps = {
+    visible: boolean
+    zIndex: number
+    top?: Responsive<Size>
+    right?: Responsive<Size>
+    bottom?: Responsive<Size>
+    left?: Responsive<Size>
+    inset?: Responsive<Size>
+  } & BoxProps
+  export function Overlay(props: OverlayProps): JSX.Element
 }

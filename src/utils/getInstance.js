@@ -6,7 +6,7 @@ export default function getInstance() {
 
   if (!root || !root[namespace]) {
     console.error(
-      "Ambrose: No configuration found. Either your environment doesn't support `global` or you forgot to call `configureSystem` from `@ambrose/system` first."
+      "Tehlu: No configuration found. Either your environment doesn't support `global` or you forgot to call `configureSystem` from `@tehlu/system` first."
     )
   }
 

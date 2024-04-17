@@ -52,12 +52,12 @@ declare module '@tehlu/system' {
   type As = string | ComponentType<any>
 
   type Options = {
+    hooks: any
     baselineGrid?: number
     plugins?: Array<Plugin>
-    hooks: any
     fallbacks?: Array<Fallback>
     typography?: Object
-    linkComponent: As
+    linkComponent?: As
   }
 
   export function createSystem(options: Options): System

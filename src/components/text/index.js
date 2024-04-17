@@ -17,6 +17,7 @@ export default forwardRef(function Text(
   ref
 ) {
   const { El, typography } = getInstance()
+  // TODO: responsive variant support
   const theme = typography?.[variant]
 
   return (
@@ -25,13 +26,13 @@ export default forwardRef(function Text(
       {...props}
       style={[
         {
-          '--tehlu_text-size': theme?.fontSize || size,
+          '--tehlu_text-size': size || theme?.fontSize,
           color: theme?.color || color,
           fontWeight: theme?.fontWeight || weight,
           textDecoration: theme?.textDecoration || decoration,
           lineHeight: theme?.lineHeight || height,
           display: 'var(--tehlu_text-inner-display, block)',
-          fontSize: 'var(--tehlu_text-size)',
+          fontSize: 'var(--tehlu_text-size, 1rem)',
         },
         style,
       ]}>

@@ -1,6 +1,6 @@
 {
   "name": "@tehlu/system",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "index.d.ts",

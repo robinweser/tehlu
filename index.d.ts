@@ -49,12 +49,15 @@ declare module '@tehlu/system' {
     match?: string
   }
 
+  type As = string | ComponentType<any>
+
   type Options = {
     baselineGrid?: number
     plugins?: Array<Plugin>
     hooks: any
     fallbacks?: Array<Fallback>
     typography?: Object
+    linkComponent: As
   }
 
   export function createSystem(options: Options): System
@@ -70,7 +73,7 @@ declare module '@tehlu/system' {
 
   type ElProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> & {
     children?: React.ReactNode
-    as?: React.ReactNode | string | React.Component
+    as?: As
     style?: Style | Array<Style>
   }
 
@@ -91,7 +94,11 @@ declare module '@tehlu/system' {
     gap?: Responsive<Size>
     padding?: Responsive<Size>
     paddingInline?: Responsive<Size>
+    paddingInlineStart?: Responsive<Size>
+    paddingInlineEnd?: Responsive<Size>
     paddingBlock?: Responsive<Size>
+    paddingBlockStart?: Responsive<Size>
+    paddingBlockEnd?: Responsive<Size>
     paddingTop?: Responsive<Size>
     paddingRight?: Responsive<Size>
     paddingBottom?: Responsive<Size>

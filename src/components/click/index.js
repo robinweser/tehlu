@@ -1,3 +1,4 @@
+'use client'
 import React, { forwardRef } from 'react'
 
 import getInstance from '../../utils/getInstance'
@@ -86,7 +87,7 @@ export default forwardRef(function Click(
     const style = getStyle(buttonStyle)
 
     return {
-      onClick: !disabled ? onClick : undefined,
+      onClick: !disabled ? action : undefined,
       style,
       disabled,
       type,

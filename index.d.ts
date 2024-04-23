@@ -49,7 +49,7 @@ declare module '@tehlu/system' {
     match?: string
   }
 
-  type As = string | ComponentType<any>
+  type As = string | React.ComponentType<any>
 
   type Options = {
     hooks: any
@@ -166,4 +166,9 @@ declare module '@tehlu/system' {
     inset?: Responsive<Size>
   } & BoxProps
   export function Overlay(props: OverlayProps): JSX.Element
+
+  type VisuallyHiddenProps = {
+    children: React.ReactNode
+  }
+  export function VisuallyHidden(props: VisuallyHiddenProps): JSX.Element
 }

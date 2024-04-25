@@ -10,7 +10,7 @@ import getRoot from './utils/getRoot'
 export default function createSystem(config) {
   const {
     hooks,
-    config as hooksConfig,
+    config: hooksConfig,
     theme,
     themes,
     keyframes,

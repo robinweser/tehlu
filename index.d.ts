@@ -51,11 +51,17 @@ declare module '@tehlu/system' {
 
   type As = string | React.ComponentType<any>
 
+  type Theme = Object
+
   type Options = {
     hooks: any
+    config?: Object
+    theme?: Theme
+    themes?: { [name: string]: Theme }
     baselineGrid?: number
     plugins?: Array<Plugin>
     fallbacks?: Array<Fallback>
+    keyframes?: { [animationName: string]: Object }
     typography?: Object
     linkComponent?: As
   }

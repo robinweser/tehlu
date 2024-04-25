@@ -1,3 +1,3 @@
 export default {
-  linkComponent: 'a'
+  linkComponent: 'a',
 }

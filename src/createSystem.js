@@ -10,6 +10,8 @@ import getRoot from './utils/getRoot'
 export default function createSystem(config) {
   const {
     hooks,
+    config,
+    theme,
     themes,
     keyframes,
     fallbacks,
@@ -21,6 +23,8 @@ export default function createSystem(config) {
 
   const [styleSheet, css] = createHooks({
     hooks,
+    config,
+    theme,
     themes,
     keyframes,
     fallbacks,

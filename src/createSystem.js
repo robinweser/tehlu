@@ -4,8 +4,6 @@ import { objectMergeDeep } from 'fast-loops'
 import createEl from './components/el/createEl'
 
 import defaultConfig from './utils/defaultConfig'
-import namespace from './utils/namespace'
-import getRoot from './utils/getRoot'
 
 export default function createSystem(config) {
   const {
@@ -33,16 +31,11 @@ export default function createSystem(config) {
 
   const El = createEl(css)
 
-  const system = {
+  return {
     El,
     baselineGrid,
     linkComponent,
     typography,
     styleSheet,
   }
-
-  const root = getRoot()
-  root[namespace] = system
-
-  return system
 }

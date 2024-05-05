@@ -1,6 +1,6 @@
 {
   "name": "@tehlu/system",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "index.d.ts",
@@ -39,9 +39,9 @@
     "fast-loops": "^1.1.3"
   },
   "peerDependencies": {
-    "brandeur": "^0.0.5",
-    "react": "^18",
-    "react-dom": "^18"
+    "brandeur": "*",
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
